@@ -22,7 +22,7 @@
 
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-                    <form>
+                    <form onsubmit="save(); return false;" id="formAluno">
                         <div class="row mb-3 mt-3">
                             <label for="inputName" class="col-sm-2 col-form-label">Nome:</label>
                             <div class="col-sm-10">
@@ -59,7 +59,7 @@
                             <div class="col-sm-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="radiosTurno" id="radiosTurno1"
-                                        value="option1" checked>
+                                        value="1" checked>
                                     <label class="form-check-label" for="radiosTurno1">
                                         Manhã
                                     </label>
@@ -67,7 +67,7 @@
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="radiosTurno" id="radiosTurno2"
-                                        value="option2">
+                                        value="2">
                                     <label class="form-check-label" for="radiosTurno2">
                                         Tarde
                                     </label>
@@ -75,7 +75,7 @@
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="radiosTurno" id="radiosTurno3"
-                                        value="option2">
+                                        value="3">
                                     <label class="form-check-label" for="radiosTurno3">
                                         Noite
                                     </label>
@@ -117,9 +117,9 @@
                             
                         </tbody>
                     </table>
-
                 </div>
             </div>
+            <br>
         </section>
     </main>
 

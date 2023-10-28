@@ -4,7 +4,7 @@ var alunos = [
         id: 1,
         name: "Pedro Antonio",
         email: "pedro.antonio@abutua.com",
-        telefone: 15999999999,
+        telefone: "(15) 99999-9999",
         curso: 1,
         turno: 1
     },
@@ -12,7 +12,7 @@ var alunos = [
         id: 2,
         name: "Carlos Silveira",
         email: "carlos.silveira@abutua.com",
-        telefone: 15999998888,
+        telefone: "(15) 99999-8888",
         curso: 2,
         turno: 2
     },
@@ -20,7 +20,7 @@ var alunos = [
         id: 3,
         name: "Maria Antonia",
         email: "maria.antonia@abutua.com",
-        telefone: 15999997777,
+        telefone: "(15) 99999-7777",
         curso: 3,
         turno: 3
     }
@@ -40,6 +40,22 @@ function loadAlunos() {
     for (let aluno of alunos) {
         addNewRow(aluno);
     }
+}
+
+//Salvar um Aluno
+function save() {
+    var novoAluno = {
+        id: alunos.length + 1,
+        name: document.getElementById("inputName").value,
+        email: document.getElementById("inputEmail").value,
+        telefone: document.getElementById("inputTelephone").value,
+        curso: document.getElementById("selectCurso").value,
+        turno: document.querySelector('input[name="radiosTurno"]:checked').value
+    };
+
+    addNewRow(novoAluno);
+    alunos.push(novoAluno);
+    document.getElementById("formAluno").reset();
 }
 
 function addNewRow(aluno) {
@@ -70,7 +86,7 @@ function addNewRow(aluno) {
     newRow.insertCell().appendChild(cursoNode);
 
     //Inserir turno do Aluno
-    var turnoNode = ""; 
+    var turnoNode = "";
 
     if (aluno.turno == 1) {
         turnoNode = document.createTextNode("Manhã");
