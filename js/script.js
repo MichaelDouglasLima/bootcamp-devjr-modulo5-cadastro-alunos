@@ -75,7 +75,9 @@ function addNewRow(aluno) {
 
     //inserir email do Aluno
     var emailNode = document.createTextNode(aluno.email);
-    newRow.insertCell().appendChild(emailNode);
+    var cell = newRow.insertCell();
+    cell.className = "d-none d-md-table-cell";
+    cell.appendChild(emailNode);
 
     //inserir telefone do Aluno
     var telefoneNode = document.createTextNode(aluno.telefone);
